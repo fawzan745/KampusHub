@@ -6,11 +6,31 @@
     <title>KampusHub:Home</title>
     <link href="./assets/css/styles.css" rel="stylesheet" />
     <style>
-      html {
+      /* html {
         scroll-behavior: smooth;
-      }
-      .hidden-section {
+      } */
+      /* .hidden-section {
         display: none;
+      } */
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      }
+      #content {
+        flex: 1;
+        padding: 20px; /* Opsional: menambahkan jarak konten */
+      }
+      footer {
+        background-color: #1e3a8a; /* Biru gelap */
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: auto;
       }
     </style>
   </head>
@@ -25,6 +45,12 @@
         <nav class="flex space-x-6">
           <a
             href="#"
+            onclick="loadPage('pages/home.html')"
+            class="hover:text-gray-300"
+            >Home</a
+          >
+          <a
+            href="#"
             onclick="loadPage('pages/about.html')"
             class="hover:text-gray-300"
             >About</a
@@ -37,7 +63,7 @@
           >
           <a
             href="#"
-            onclick="loadPage('pages/task_and_project.html')"
+            onclick="loadPage('pages/taskAndProject.html')"
             class="hover:text-gray-300"
             >Task and Project</a
           >
@@ -54,28 +80,6 @@
     <!-- Main Content -->
     <div id="content" class="container mx-auto flex flex-col mt-4 px-4">
       <!-- Main Content -->
-      <main class="flex-1 bg-white shadow-md rounded-lg p-6">
-        <h2 class="text-xl font-bold mb-4">Welcome To KampusHub!</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <!-- Card 1 -->
-          <div class="bg-blue-200 p-4 rounded-lg shadow-md">
-            <h3 class="font-bold text-lg">Jadwal Kuliah Hari Ini</h3>
-            <p class="text-sm mt-2">Tidak ada kelas hari ini! 🎉</p>
-          </div>
-          <!-- Card 2 -->
-          <div class="bg-blue-300 p-4 rounded-lg shadow-md">
-            <h3 class="font-bold text-lg">Proyek Terkini</h3>
-            <p class="text-sm mt-2">
-              Analisis Statistik Pendidikan (Deadline: Jumat).
-            </p>
-          </div>
-          <!-- Card 3 -->
-          <div class="bg-blue-400 p-4 rounded-lg shadow-md">
-            <h3 class="font-bold text-lg">Pengumuman</h3>
-            <p class="text-sm mt-2">Jangan lupa mengisi KRS semester depan!</p>
-          </div>
-        </div>
-      </main>
     </div>
 
     <!-- Footer -->
@@ -86,29 +90,28 @@
     </footer>
 
     <script>
+      function loadPage(page) {
+        const contentDiv = document.getElementById("content");
+
+        fetch(page)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.text();
+          })
+          .then((data) => {
+            contentDiv.innerHTML = data;
+          })
+          .catch((error) => {
+            console.error("Error loading the page:", error);
+            contentDiv.innerHTML = `<p>Error loading content: ${error.message}</p>`;
+          });
+      }
+
       document.addEventListener("DOMContentLoaded", function () {
-        function loadPage(page) {
-          const contentDiv = document.getElementById("content");
-
-          fetch(page)
-            .then((response) => {
-              if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-              }
-              return response.text();
-            })
-            .then((data) => {
-              contentDiv.innerHTML = data;
-            })
-            .catch((error) => {
-              console.error("Error loading the page:", error);
-              contentDiv.innerHTML = `<p>Error loading content: ${error.message}</p>`;
-            });
-        }
-
-        window.onload = () => {
-          loadPage("pages/about.html");
-        };
+        // Load the default page on first load
+        loadPage("pages/home.html");
       });
     </script>
   </body>
