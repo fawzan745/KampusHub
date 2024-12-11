@@ -5,44 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KampusHub:Home</title>
     <link href="./pages/css/styles.css" rel="stylesheet" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .hidden-section {
+        display: none;
+      }
+    </style>
   </head>
-  <body class="bg-gray-100 font-sans">
+  <body class="bg-blue-50 font-sans">
     <!-- Header -->
     <header class="bg-blue-800 text-white py-4 shadow-md">
       <div class="container mx-auto flex justify-between items-center px-4">
         <div class="flex items-center space-x-3">
-          <img src="logo.png" alt="Logo KampusHub" class="w-8 h-8" />
+          <img src="logo.png" alt="Logo KampusHub" class="w-12 h-9" />
           <h1 class="text-2xl font-bold ml-0-0">KampusHub</h1>
         </div>
         <nav class="flex space-x-6">
-          <a href="#" class="hover:text-gray-300">About</a>
-          <a href="#" class="hover:text-gray-300">Course Schedule</a>
-          <a href="#" class="hover:text-gray-300">Task and Project</a>
-          <a href="#" class="hover:text-gray-300">Profile</a>
+          <a
+            href="#"
+            onclick="loadPage('pages/about.html')"
+            class="hover:text-gray-300"
+            >About</a
+          >
+          <a
+            href="#"
+            onclick="loadPage('pages/schedule.html')"
+            class="hover:text-gray-300"
+            >Course Schedule</a
+          >
+          <a
+            href="#"
+            onclick="loadPage('pages/task_and_project.html')"
+            class="hover:text-gray-300"
+            >Task and Project</a
+          >
+          <a
+            href="#"
+            onclick="loadPage('pages/profile.html')"
+            class="hover:text-gray-300"
+            >Profile</a
+          >
         </nav>
       </div>
     </header>
 
     <!-- Main Content -->
-    <div class="container mx-auto flex flex-col mt-4 px-4">
+    <div id="content" class="container mx-auto flex flex-col mt-4 px-4">
       <!-- Main Content -->
       <main class="flex-1 bg-white shadow-md rounded-lg p-6">
         <h2 class="text-xl font-bold mb-4">Selamat Datang di KampusHub!</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <!-- Card 1 -->
-          <div class="bg-blue-100 p-4 rounded-lg shadow-md">
+          <div class="bg-blue-200 p-4 rounded-lg shadow-md">
             <h3 class="font-bold text-lg">Jadwal Kuliah Hari Ini</h3>
             <p class="text-sm mt-2">Tidak ada kelas hari ini! 🎉</p>
           </div>
           <!-- Card 2 -->
-          <div class="bg-green-100 p-4 rounded-lg shadow-md">
+          <div class="bg-blue-300 p-4 rounded-lg shadow-md">
             <h3 class="font-bold text-lg">Proyek Terkini</h3>
             <p class="text-sm mt-2">
               Analisis Statistik Pendidikan (Deadline: Jumat).
             </p>
           </div>
           <!-- Card 3 -->
-          <div class="bg-yellow-100 p-4 rounded-lg shadow-md">
+          <div class="bg-blue-400 p-4 rounded-lg shadow-md">
             <h3 class="font-bold text-lg">Pengumuman</h3>
             <p class="text-sm mt-2">Jangan lupa mengisi KRS semester depan!</p>
           </div>
@@ -51,17 +79,36 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-4 mt-4">
+    <footer class="bg-blue-800 text-white py-4 mt-4">
       <div class="container mx-auto text-center">
         <p>&copy; 2024 KampusHub. All rights reserved.</p>
       </div>
     </footer>
 
     <script>
-      // Mobile menu toggle
-      document.getElementById("menu-btn").addEventListener("click", () => {
-        const nav = document.querySelector("nav");
-        nav.classList.toggle("hidden");
+      document.addEventListener("DOMContentLoaded", function () {
+        function loadPage(page) {
+          const contentDiv = document.getElementById("content");
+
+          fetch(page)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+              return response.text();
+            })
+            .then((data) => {
+              contentDiv.innerHTML = data;
+            })
+            .catch((error) => {
+              console.error("Error loading the page:", error);
+              contentDiv.innerHTML = `<p>Error loading content: ${error.message}</p>`;
+            });
+        }
+
+        window.onload = () => {
+          loadPage("pages/about.html");
+        };
       });
     </script>
   </body>
