@@ -31,6 +31,7 @@
       nav {
         display: flex;
         gap: 10px;
+        position: relative;
       }
       nav a {
         color: white;
@@ -38,6 +39,8 @@
         padding: 8px;
         text-align: center;
         border-radius: 5px;
+        position: relative;
+        background: none;
       }
       nav a:hover {
         background: #3b82f6;
@@ -50,6 +53,41 @@
         color: white;
         cursor: pointer;
       }
+
+      /* Dropdown styling */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown > a {
+        display: block;
+        background-color: #2563eb; /* Warna menu induk */
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #2563eb;
+        padding: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        min-width: 150px;
+      }
+      .dropdown-content a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+      .dropdown-content a:hover {
+        background-color: #1e40af;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
       @media (max-width: 640px) {
         .menu-toggle {
           display: block;
@@ -92,15 +130,43 @@
         </div>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <nav>
-          <a href="#" onclick="loadPage('pages/home.html')">Home</a>
-          <a href="#" onclick="loadPage('pages/about.html')">About</a>
-          <a href="#" onclick="loadPage('pages/schedule.html')"
-            >Course Schedule</a
+          <a href="#" onclick="loadPage('pages/home/home.html')">Home</a>
+          <a href="#" onclick="loadPage('pages/about/about.html')">About</a>
+          <div class="dropdown">
+            <a href="#" onclick="loadPage('pages/schedule/schedule.html')"
+              >Course Schedule</a
+            >
+            <div class="dropdown-content">
+              <a href="#" onclick="loadPage('pages/schedule/sem1.html')"
+                >Semester 1</a
+              >
+              <a href="#" onclick="loadPage('pages/schedule/sem2.html')"
+                >Semester 2</a
+              >
+              <a href="#" onclick="loadPage('pages/schedule/sem3.html')"
+                >Semester 3</a
+              >
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="#" onclick="loadPage('pages/task/taskAndProject.html')"
+              >Task and Project</a
+            >
+            <div class="dropdown-content">
+              <a href="#" onclick="loadPage('pages/task/sem1.html')"
+                >Semester 1</a
+              >
+              <a href="#" onclick="loadPage('pages/task/sem2.html')"
+                >Semester 2</a
+              >
+              <a href="#" onclick="loadPage('pages/task/sem3.html')"
+                >Semester 3</a
+              >
+            </div>
+          </div>
+          <a href="#" onclick="loadPage('pages/profile/profile.html')"
+            >Profile</a
           >
-          <a href="#" onclick="loadPage('pages/taskAndProject.html')"
-            >Task and Project</a
-          >
-          <a href="#" onclick="loadPage('pages/profile.html')">Profile</a>
         </nav>
       </div>
     </header>
@@ -150,7 +216,7 @@
 
       document.addEventListener("DOMContentLoaded", function () {
         // Load the default page on first load
-        loadPage("pages/home.html");
+        loadPage("pages/home/home.html");
       });
     </script>
   </body>
