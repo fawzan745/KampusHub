@@ -6,12 +6,6 @@
     <title>KampusHub:Home</title>
     <link href="./assets/css/styles.css" rel="stylesheet" />
     <style>
-      /* html {
-        scroll-behavior: smooth;
-      } */
-      /* .hidden-section {
-        display: none;
-      } */
       html,
       body {
         height: 100%;
@@ -32,47 +26,81 @@
         padding: 10px 0;
         margin-top: auto;
       }
+
+      /* Styling untuk navbar responsive */
+      nav {
+        display: flex;
+        gap: 10px;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 8px;
+        text-align: center;
+        border-radius: 5px;
+      }
+      nav a:hover {
+        background: #3b82f6;
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+      }
+      @media (max-width: 640px) {
+        .menu-toggle {
+          display: block;
+        }
+        nav {
+          display: none;
+          flex-direction: column;
+          gap: 10px;
+          background-color: #1e3a8a;
+          padding: 10px;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          width: 100%;
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .menu-toggle.active + nav {
+          display: flex;
+        }
+        nav a {
+          background: #2563eb; /* Background untuk HP */
+        }
+      }
+      @media (min-width: 641px) {
+        nav a {
+          background: none; /* Tidak ada background untuk tablet dan laptop */
+        }
+      }
     </style>
   </head>
   <body class="bg-blue-50 font-sans">
     <!-- Header -->
     <header class="bg-blue-800 text-white py-4 shadow-md">
-      <div class="container mx-auto flex justify-between items-center px-4">
+      <div
+        class="container mx-auto flex justify-between items-center px-4 relative"
+      >
         <div class="flex items-center space-x-3">
           <img src="logo.png" alt="Logo KampusHub" class="w-12 h-9" />
           <h1 class="text-2xl font-bold ml-0-0">KampusHub</h1>
         </div>
-        <nav class="flex space-x-6">
-          <a
-            href="#"
-            onclick="loadPage('pages/home.html')"
-            class="hover:text-gray-300"
-            >Home</a
-          >
-          <a
-            href="#"
-            onclick="loadPage('pages/about.html')"
-            class="hover:text-gray-300"
-            >About</a
-          >
-          <a
-            href="#"
-            onclick="loadPage('pages/schedule.html')"
-            class="hover:text-gray-300"
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav>
+          <a href="#" onclick="loadPage('pages/home.html')">Home</a>
+          <a href="#" onclick="loadPage('pages/about.html')">About</a>
+          <a href="#" onclick="loadPage('pages/schedule.html')"
             >Course Schedule</a
           >
-          <a
-            href="#"
-            onclick="loadPage('pages/taskAndProject.html')"
-            class="hover:text-gray-300"
+          <a href="#" onclick="loadPage('pages/taskAndProject.html')"
             >Task and Project</a
           >
-          <a
-            href="#"
-            onclick="loadPage('pages/profile.html')"
-            class="hover:text-gray-300"
-            >Profile</a
-          >
+          <a href="#" onclick="loadPage('pages/profile.html')">Profile</a>
         </nav>
       </div>
     </header>
@@ -107,6 +135,17 @@
             console.error("Error loading the page:", error);
             contentDiv.innerHTML = `<p>Error loading content: ${error.message}</p>`;
           });
+      }
+
+      function toggleMenu() {
+        const toggleButton = document.querySelector(".menu-toggle");
+        toggleButton.classList.toggle("active");
+        const nav = toggleButton.nextElementSibling;
+        if (toggleButton.classList.contains("active")) {
+          nav.style.display = "flex";
+        } else {
+          nav.style.display = "none";
+        }
       }
 
       document.addEventListener("DOMContentLoaded", function () {
