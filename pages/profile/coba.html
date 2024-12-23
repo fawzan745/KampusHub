@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KampusHub</title>
+    <link href="/pages/css/styles.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <a href="coba.html" class="flex items-center space-x-2">
+                <img src="/picture/logo.png" alt="KampusHub Logo" class="h-8 w-8" />
+                <span class="font-bold text-lg">KampusHub</span>
+        </div>
+        <ul class="flex space-x-4">
+          <li>
+            <a href="/pages/about/">About</a>
+          </li>
+          <li><a href="/pages/schedule/">Schedule</a></li>
+          <li>
+            <a href="/pages/task/">Tasks & Projects</a>
+          </li>
+          <li><a href="/pages/profile/">Profile</a></li>
+        </ul>
+      </div>
+    </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 bg-white shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-bold mb-4">Welcome To KampusHub!</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Card 1 -->
+            <div class="bg-blue-200 p-4 rounded-lg shadow-md">
+              <h3 class="font-bold text-lg">Jadwal Kuliah Hari Ini</h3>
+              <p class="text-sm mt-2">Tidak ada kelas hari ini! 🎉</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-blue-300 p-4 rounded-lg shadow-md">
+              <h3 class="font-bold text-lg">Proyek Terkini</h3>
+              <p class="text-sm mt-2">
+                Analisis Statistik Pendidikan (Deadline: Jumat).
+              </p>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-blue-400 p-4 rounded-lg shadow-md">
+              <h3 class="font-bold text-lg">Pengumuman</h3>
+              <p class="text-sm mt-2">Jangan lupa mengisi KRS semester depan!</p>
+            </div>
+          </div>
+        </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white p-4 text-center">
+      &copy; 2024 KampusHub. All rights reserved.
+    </footer>
+  </body>
+</html>
