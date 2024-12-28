@@ -1,13 +1,21 @@
-import { fetchScheduleData } from "./fetchmatkul.js";
+import { fetchScheduleData } from "./fetchmatkul1.js";
 import { createDaySchedule } from "./tableandpopup.js";
 
-export default function loadSchedule() {
-  fetchScheduleData().then((data) => {
-    const app = document.getElementById("app");
+export default async function loadSchedule() {
+  try {
+    const data = await fetchScheduleData();
+
+    // Buat container utama untuk semua jadwal
+    const scheduleContainer = document.createElement("div");
 
     data.forEach((day) => {
       const daySchedule = createDaySchedule(day);
-      app.appendChild(daySchedule);
+      scheduleContainer.appendChild(daySchedule);
     });
-  });
+
+    return scheduleContainer;
+  } catch (error) {
+    console.error("Failed to load schedule data:", error);
+    throw error; // Propagasi error jika diperlukan
+  }
 }
