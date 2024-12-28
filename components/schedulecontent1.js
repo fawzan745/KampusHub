@@ -1,4 +1,6 @@
+import GLOBAL_ENV from "./../config.dev.js";
 export default function ScheduleContent1() {
+  const HOME = GLOBAL_ENV.HOME;
   const main = document.createElement("main");
   main.className = "flex-1 bg-white shadow-md rounded-lg p-6";
 
@@ -8,7 +10,7 @@ export default function ScheduleContent1() {
   main.appendChild(placeholder);
 
   // Panggil data JSON
-  fetch("./data/matkul1.json")
+  fetch(`${HOME}data/matkul1.json`)
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
