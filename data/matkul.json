@@ -1,0 +1,117 @@
+[
+  {
+    "day": "Senin",
+    "subjects": [
+      {
+        "name": "Praktikum Statistika Dasar",
+        "daytime": "Senin",
+        "time": "08.00 - 09.40",
+        "room": "C 105",
+        "lecturer": "Ronny Susetyoko",
+        "sks": 2,
+        "description": "Pengenalan dasar-dasar statistika dalam bentuk praktikum."
+      },
+      {
+        "name": "Praktikum Pemrograman 1",
+        "daytime": "Senin",
+        "time": "10.30 - 12.10",
+        "room": "C 303",
+        "lecturer": "Tri Hadiah Muliawati",
+        "sks": 3,
+        "description": "Praktikum pemrograman dasar menggunakan bahasa pemrograman modern."
+      }
+    ]
+  },
+  {
+    "day": "Selasa",
+    "subjects": [
+      {
+        "name": "Matematika 1",
+        "daytime": "Selasa",
+        "time": "08.00 - 09.40",
+        "room": "B 304",
+        "lecturer": "Ira Prasetyaningrum",
+        "sks": 3,
+        "description": "Matematika dasar yang mencakup aljabar dan kalkulus."
+      },
+      {
+        "name": "Basis Data",
+        "daytime": "Selasa",
+        "time": "13.00 - 14.40",
+        "room": "PS-03.11",
+        "lecturer": "Isbat Uzzin Nadhori",
+        "sks": 3,
+        "description": "Pembelajaran tentang pengelolaan dan perancangan basis data."
+      }
+    ]
+  },
+  {
+    "day": "Rabu",
+    "subjects": [
+      {
+        "name": "Praktikum Pemrograman 1",
+        "daytime": "Rabu",
+        "time": "08.00 - 09.40",
+        "room": "C 203",
+        "lecturer": "Tri Hadiah Muliawati",
+        "sks": 2,
+        "description": "Praktikum pemrograman dasar menggunakan bahasa pemrograman modern."
+      },
+      {
+        "name": "Pemrograman 1",
+        "daytime": "Rabu",
+        "time": "11.20 - 13.30",
+        "room": "B 305",
+        "lecturer": "Tri Hadiah Muliawati",
+        "sks": 3,
+        "description": "Teori dasar pemrograman dengan bahasa pemrograman terstruktur."
+      },
+      {
+        "name": "Praktikum Basis Data",
+        "daytime": "Rabu",
+        "time": "13.50 - 15.30",
+        "room": "C 105",
+        "lecturer": "Isbat Uzzin Nadhori",
+        "sks": 2,
+        "description": "Praktikum dalam perancangan dan pengelolaan basis data."
+      }
+    ]
+  },
+  {
+    "day": "Kamis",
+    "subjects": [
+      {
+        "name": "Agama",
+        "daytime": "Kamis",
+        "time": "09.40 - 11.20",
+        "room": "HH-101",
+        "lecturer": "Choliliyah Toha",
+        "sks": 2,
+        "description": "Pembelajaran mengenai ajaran agama yang berfokus pada nilai-nilai moral."
+      },
+      {
+        "name": "Aljabar Linier",
+        "daytime": "Kamis",
+        "time": "11.20 - 13.30",
+        "room": "B 301",
+        "lecturer": "Fitrah Maharani Humaira",
+        "sks": 3,
+        "description": "Mempelajari konsep aljabar linier yang mencakup matriks dan vektor."
+      }
+    ]
+  },
+  {
+    "day": "Jumat",
+    "subjects": [
+      {
+        "name": "Logika dan Algoritma",
+        "daytime": "Jum'at",
+        "time": "08.00 - 09.40",
+        "room": "PS-07.03",
+        "lecturer": "Tri Hadiah Muliawati",
+        "sks": 3,
+        "description": "Pembelajaran tentang logika matematika dan algoritma dasar dalam pemrograman."
+      }
+    ]
+  }
+]

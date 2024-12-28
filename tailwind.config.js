@@ -5,6 +5,7 @@ module.exports = {
     "./pages/**/*.{html,js}",
     "./*.{html,js}",
     "./components/**/*.{html,js}",
+    "./trial/**/*.{html,js}",
   ],
   theme: {
     extend: {},
