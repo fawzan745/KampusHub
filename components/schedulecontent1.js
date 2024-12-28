@@ -8,7 +8,7 @@ export default function ScheduleContent1() {
   main.appendChild(placeholder);
 
   // Panggil data JSON
-  fetch("data/matkul1.json")
+  fetch("./../data/matkul1.json")
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
