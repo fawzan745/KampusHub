@@ -15,7 +15,7 @@ export default function HomeContent() {
         <div class="flex items-center space-x-6">
           <!-- Logo -->
           <img
-            src="/public/images/logo.png"
+            src="${HOME}public/images/logo.png"
             alt="Logo KampusHub"
             class="h-40 w-40 rounded-full shadow-md"
           />
