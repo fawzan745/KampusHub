@@ -5,6 +5,15 @@ export default function addEventListenerNavbar() {
    */
   const menuToggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("menu");
+  const scheduleBtn = document.getElementById("schedule-btn");
+  const dropdown = document.getElementById("schedule-dropdown");
+  const taskBtn = document.getElementById("task-btn");
+  const taskDropdown = document.getElementById("task-dropdown");
+
+  taskBtn.addEventListener("click", () => {
+    taskDropdown.classList.toggle("hidden");
+  });
+
   // Tampilkan/Sembunyikan menu saat tombol hamburger diklik
   menuToggle.addEventListener("click", () => {
     menu.classList.toggle("hidden");
@@ -16,5 +25,28 @@ export default function addEventListenerNavbar() {
     item.addEventListener("click", () => {
       menu.classList.add("hidden");
     });
+  });
+
+  // Tampilkan atau sembunyikan dropdown saat tombol diklik
+  scheduleBtn.addEventListener("click", (event) => {
+    event.stopPropagation(); // Hindari event bubbling
+    dropdown.classList.toggle("hidden");
+  });
+
+  // Sembunyikan dropdown jika klik di luar elemen
+  document.addEventListener("click", (event) => {
+    if (
+      !scheduleDropdown.contains(event.target) &&
+      !scheduleBtn.contains(event.target)
+    ) {
+      scheduleDropdown.classList.add("hidden");
+    }
+
+    if (
+      !taskDropdown.contains(event.target) &&
+      !taskBtn.contains(event.target)
+    ) {
+      taskDropdown.classList.add("hidden");
+    }
   });
 }

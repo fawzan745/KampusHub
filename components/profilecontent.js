@@ -1,4 +1,6 @@
+import GLOBAL_ENV from "./../config.dev.js";
 export default function HomeContent() {
+  const HOME = GLOBAL_ENV.HOME;
   const main = document.createElement("main");
   main.className = "flex-1 bg-white shadow-md rounded-lg p-6";
 

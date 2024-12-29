@@ -1,4 +1,4 @@
-import Navbar from "./../components/navbar.js";
+import Navbar from "./navbar.js";
 import domContent from "./dom.js";
 import Footer from "./../components/footer.js";
 import addEventListener from "./../components/addEventListenerNavbar.js";
