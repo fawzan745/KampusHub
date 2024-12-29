@@ -17,7 +17,7 @@ export default function HomeContent() {
           <div class="flex items-center space-x-6">
             <!-- Logo -->
             <img
-              src="/public/images/pp.jpg"
+              src="${HOME}public/images/pp.jpg"
               alt="Profiel Picture"
               class="h-40 w-40 rounded-full shadow-md"
             />
