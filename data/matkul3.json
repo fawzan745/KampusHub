@@ -1,0 +1,135 @@
+[
+  {
+    "day": "Senin",
+    "subjects": [
+      {
+        "name": "Analisa Statistika Terapan",
+        "daytime": "Senin",
+        "time": "08.00 - 09.40",
+        "room": "PS-04.11",
+        "lecturer": "Ronny Susetyoko",
+        "sks": 3,
+        "description": "Analisis data statistik terapan menggunakan metode modern."
+      },
+      {
+        "name": "Eksplorasi dan Visualisasi Data",
+        "daytime": "Senin",
+        "time": "09.40 - 11.20",
+        "room": "SAW-03.06",
+        "lecturer": "Edi Satriyanto",
+        "sks": 3,
+        "description": "Eksplorasi dataset dan visualisasi data menggunakan perangkat lunak statistik."
+      }
+    ]
+  },
+  {
+    "day": "Selasa",
+    "subjects": [
+      {
+        "name": "Praktikum Mesin Pembelajaran",
+        "daytime": "Selasa",
+        "time": "08.00 - 09.40",
+        "room": "SAW-07.06",
+        "lecturer": "Nur Rosyid Mubtadai",
+        "sks": 1,
+        "description": "Praktik menggunakan algoritma pembelajaran mesin pada dataset."
+      },
+      {
+        "name": "Mesin Pembelajaran",
+        "daytime": "Selasa",
+        "time": "09.40 - 11.20",
+        "room": "SAW-01.05",
+        "lecturer": "Nur Rosyid Mubtadai",
+        "sks": 3,
+        "description": "Pengantar teori dan aplikasi pembelajaran mesin."
+      },
+      {
+        "name": "Text Mining",
+        "daytime": "Selasa",
+        "time": "14.40 - 16.20",
+        "room": "B 202",
+        "lecturer": "Tita Karlita",
+        "sks": 3,
+        "description": "Analisis teks untuk penambangan informasi."
+      }
+    ]
+  },
+  {
+    "day": "Rabu",
+    "subjects": [
+      {
+        "name": "Pancasila",
+        "daytime": "Rabu",
+        "time": "08.50 - 10.30",
+        "room": "SAW-01.05",
+        "lecturer": "Prima Dewi Permatasari",
+        "sks": 2,
+        "description": "Pengajaran nilai-nilai Pancasila dan pemahaman mendalam tentang dasar negara."
+      },
+      {
+        "name": "Praktikum Eksplorasi dan Visualisasi Data",
+        "daytime": "Rabu",
+        "time": "10.30 - 12.10",
+        "room": "SAW-07.06",
+        "lecturer": "Edi Satriyanto",
+        "sks": 1,
+        "description": "Praktik eksplorasi dan visualisasi data menggunakan perangkat lunak."
+      },
+      {
+        "name": "Praktikum Analisa Statistika Terapan",
+        "daytime": "Rabu",
+        "time": "13.50 - 15.30",
+        "room": "SAW-07.06",
+        "lecturer": "Ronny Susetyoko",
+        "sks": 1,
+        "description": "Praktik analisa statistik pada kasus nyata."
+      }
+    ]
+  },
+  {
+    "day": "Kamis",
+    "subjects": [
+      {
+        "name": "Praktikum Pemrograman 3",
+        "daytime": "Kamis",
+        "time": "08.00 - 09.40",
+        "room": "SAW-07.07",
+        "lecturer": "Grezio Arifiyan Primajaya",
+        "sks": 1,
+        "description": "Praktik pemrograman lanjutan dengan fokus pada pengembangan aplikasi."
+      },
+      {
+        "name": "Pemrograman 3",
+        "daytime": "Kamis",
+        "time": "09.40 - 12.10",
+        "room": "PS-04.08",
+        "lecturer": "Grezio Arifiyan Primajaya",
+        "sks": 3,
+        "description": "Pengajaran teknik pemrograman tingkat lanjut."
+      },
+      {
+        "name": "Praktikum Text Mining",
+        "daytime": "Kamis",
+        "time": "13.00 - 14.40",
+        "room": "SAW-07.06",
+        "lecturer": "Tita Karlita",
+        "sks": 1,
+        "description": "Praktik analisis teks dan ekstraksi informasi dari data teks."
+      }
+    ]
+  },
+  {
+    "day": "Jumat",
+    "subjects": [
+      {
+        "name": "Matematika 3",
+        "daytime": "Jumat",
+        "time": "08.00 - 09.40",
+        "room": "B 303",
+        "lecturer": "Alfi Fadliana",
+        "sks": 2,
+        "description": "Kelas lanjutan matematika dengan fokus pada penerapan kalkulus."
+      }
+    ]
+  }
+]

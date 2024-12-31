@@ -98,7 +98,7 @@ export default function Navbar() {
             >
               <li>
                 <button
-                  onclick="window.location.href='${HOME}pages/task/index.html'"
+                  onclick="window.location.href='${HOME}pages/task/sem1/index.html'"
                   class="w-full text-left px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
                 >
                   Semester 1
@@ -106,7 +106,7 @@ export default function Navbar() {
               </li>
               <li>
                 <button
-                  onclick="window.location.href='${HOME}pages/task/index.html'"
+                  onclick="window.location.href='${HOME}pages/task/sem3/index.html'"
                   class="w-full text-left px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
                 >
                   Semester 2
@@ -114,7 +114,7 @@ export default function Navbar() {
               </li>
               <li>
                 <button
-                  onclick="window.location.href='${HOME}pages/task/index.html'"
+                  onclick="window.location.href='${HOME}pages/task/sem2/index.html'"
                   class="w-full text-left px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
                 >
                   Semester 3

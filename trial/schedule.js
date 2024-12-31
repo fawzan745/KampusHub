@@ -1,28 +1,44 @@
-export function loadSchedule() {
-  fetch("./matkul.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const app = document.getElementById("app");
+import GLOBAL_ENV from "./../config.dev.js";
 
-      data.forEach((day) => {
+export default function ScheduleContent1() {
+  const HOME = GLOBAL_ENV.HOME;
+  const main = document.createElement("main");
+  main.className = "flex-1 bg-white shadow-md rounded-lg p-6";
+
+  const placeholder = document.createElement("div");
+  placeholder.textContent = "Loading schedule...";
+  placeholder.className = "text-center text-gray-500";
+  main.appendChild(placeholder);
+
+  fetch(`${HOME}data/matkul1.json`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      // Hapus placeholder
+      main.removeChild(placeholder);
+
+      // Iterasi melalui data JSON
+      Object.entries(data).forEach(([day, subjects]) => {
         const dayContainer = document.createElement("div");
-        dayContainer.className = "container mx-auto my-4 flex flex-col"; // Gunakan flex-col untuk elemen vertikal
+        dayContainer.className = "container mx-auto my-4 flex flex-col";
 
         const dayTitle = document.createElement("h2");
         dayTitle.className =
           "text-xl font-bold mb-4 text-center bg-blue-700 text-white py-2 rounded";
-        dayTitle.textContent = day.day;
+        dayTitle.textContent = day.charAt(0).toUpperCase() + day.slice(1);
         dayContainer.appendChild(dayTitle);
 
-        // Membuat tabel
         const table = document.createElement("table");
-        table.className = "w-full table-auto border-collapse mx-auto mb-4"; // Menambahkan mx-auto untuk memusatkan tabel
+        table.className = "w-full table-auto border-collapse mx-auto mb-4";
 
         const tableHeader = document.createElement("thead");
         const headerRow = document.createElement("tr");
         headerRow.className = "bg-blue-500 text-white";
 
-        // Menambahkan header tabel
         const timeHeader = document.createElement("th");
         timeHeader.className = "py-2 px-4 border";
         timeHeader.textContent = "Waktu";
@@ -33,23 +49,27 @@ export function loadSchedule() {
         subjectHeader.textContent = "Mata Kuliah";
         headerRow.appendChild(subjectHeader);
 
-        const roomHeader = document.createElement("th"); // Kolom baru untuk ruangan
+        const roomHeader = document.createElement("th");
         roomHeader.className = "py-2 px-4 border";
-        roomHeader.textContent = "Ruangan"; // Teks untuk kolom ruangan
+        roomHeader.textContent = "Ruangan";
         headerRow.appendChild(roomHeader);
+
+        const lecturerHeader = document.createElement("th");
+        lecturerHeader.className = "py-2 px-4 border";
+        lecturerHeader.textContent = "Dosen";
+        headerRow.appendChild(lecturerHeader);
 
         tableHeader.appendChild(headerRow);
         table.appendChild(tableHeader);
 
-        // Menambahkan baris mata kuliah
         const tableBody = document.createElement("tbody");
-        day.subjects.forEach((subject) => {
+        subjects.forEach((subject) => {
           const row = document.createElement("tr");
 
           // Waktu
           const timeCell = document.createElement("td");
           timeCell.className = "py-2 px-4 border";
-          timeCell.textContent = subject.time;
+          timeCell.textContent = subject.waktu;
           row.appendChild(timeCell);
 
           // Nama Mata Kuliah sebagai tombol
@@ -59,20 +79,26 @@ export function loadSchedule() {
           const subjectButton = document.createElement("button");
           subjectButton.className =
             "w-full text-left rounded shadow hover:bg-blue-400 transition p-2";
-          subjectButton.textContent = subject.name;
+          subjectButton.textContent = subject.mata_kuliah;
 
           subjectButton.addEventListener("click", () => {
-            showPopup(subject);
+            showPopup(subject); // Tampilkan popup saat tombol diklik
           });
 
           subjectCell.appendChild(subjectButton);
           row.appendChild(subjectCell);
 
           // Ruangan
-          const roomCell = document.createElement("td"); // Sel baru untuk ruangan
+          const roomCell = document.createElement("td");
           roomCell.className = "py-2 px-4 border";
-          roomCell.textContent = subject.room; // Menampilkan ruangan
+          roomCell.textContent = subject.ruangan;
           row.appendChild(roomCell);
+
+          // Dosen
+          const lecturerCell = document.createElement("td");
+          lecturerCell.className = "py-2 px-4 border";
+          lecturerCell.textContent = subject.dosen;
+          row.appendChild(lecturerCell);
 
           tableBody.appendChild(row);
         });
@@ -80,48 +106,11 @@ export function loadSchedule() {
         table.appendChild(tableBody);
         dayContainer.appendChild(table);
 
-        app.appendChild(dayContainer);
+        main.appendChild(dayContainer);
       });
     })
-    .catch((err) => console.error("Failed to load schedule data:", err));
-}
-
-function showPopup(subject) {
-  // Membuat elemen untuk popup
-  const popup = document.createElement("div");
-  popup.className =
-    "fixed inset-0 bg-blue-700 bg-opacity-50 flex justify-center items-center z-50"; // Membuat latar belakang semi transparan dan memusatkan popup
-
-  // Membuat konten popup
-  const popupContent = document.createElement("div");
-  popupContent.className = "bg-white rounded-lg shadow-lg w-1/2 p-6";
-  popupContent.innerHTML = `
-      <h2 class="text-xl font-bold mb-4">${subject.name}</h2>
-      <p class="mb-2"><strong>Hari:</strong> ${subject.daytime}</p>
-      <p class="mb-2"><strong>Waktu:</strong> ${subject.time}</p>
-      <p class="mb-2"><strong>Ruangan:</strong> ${subject.room}</p>
-      <p class="mb-2"><strong>Dosen:</strong> ${subject.lecturer}</p>
-      <p class="mb-2"><strong>SKS:</strong> ${subject.sks}</p>
-      <p class="mb-4"><strong>Deskripsi:</strong> ${subject.description}</p>
-      <button class="bg-blue-500 text-white px-4 py-2 rounded-full" id="closePopup">Close</button>
-    `;
-
-  // Memasukkan konten popup ke dalam elemen popup
-  popup.appendChild(popupContent);
-  document.body.appendChild(popup);
-
-  // Untuk memposisikan popup di tengah layar
-  const popupWidth = popupContent.offsetWidth;
-  const popupHeight = popupContent.offsetHeight;
-
-  // Posisi absolute dengan menggunakan transform untuk benar-benar memusatkan popup
-  popupContent.style.position = "absolute";
-  popupContent.style.top = "50%";
-  popupContent.style.left = "50%";
-  popupContent.style.transform = "translate(-50%, -50%)"; // Memastikan popup benar-benar di tengah layar
-
-  // Menambahkan event listener untuk menutup popup
-  document.getElementById("closePopup").addEventListener("click", () => {
-    document.body.removeChild(popup);
-  });
+    .catch((error) => {
+      placeholder.textContent = "Failed to load schedule.";
+      console.error("Error loading schedule data:", error);
+    });
 }

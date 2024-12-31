@@ -9,5 +9,6 @@ export default function loadSchedule() {
       const daySchedule = createDaySchedule(day);
       app.appendChild(daySchedule);
     });
+    XMLDocument;
   });
 }
