@@ -1,8 +1,8 @@
 const GLOBAL_ENV = {
   NODE_ENV: "dev",
   VER: "1.0.0",
-  HOME: "/",
-  // HOME: "https://fawzan745.github.io/KampusHub/",
+  // HOME: "/",
+  ME: "https://fawzan745.github.io/KampusHub/",
   APP_NAME: "smartactlink",
   JSON_CONFIG_URL_GITHUB:
     "https://raw.githubusercontent.com/slametsampon/SmartActLink/refs/heads/main/data/configDevices.json",
