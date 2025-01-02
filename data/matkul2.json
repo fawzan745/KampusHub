@@ -1,135 +1,120 @@
-[
-  {
-    "day": "Senin",
-    "subjects": [
-      {
-        "name": "Matematika 2",
-        "daytime": "Senin",
-        "time": "08.00 - 09.40",
-        "room": "A 301",
-        "lecturer": "Alfi Fadliana",
-        "sks": 2,
-        "description": "Pembahasan lanjutan dalam kalkulus dan matematika terapan."
-      },
-      {
-        "name": "Kewarganegaraan",
-        "daytime": "Senin",
-        "time": "10.30 - 12.10",
-        "room": "HH-101",
-        "lecturer": "Mochammad Machmud Rifadil",
-        "sks": 2,
-        "description": "Pengembangan wawasan kebangsaan dan nilai-nilai kewarganegaraan."
-      },
-      {
-        "name": "Pemrograman 2",
-        "daytime": "Senin",
-        "time": "13.50 - 15.30",
-        "room": "B 302",
-        "lecturer": "Tri Hadiah Muliawati",
-        "sks": 3,
-        "description": "Pengembangan kemampuan pemrograman lanjutan menggunakan teknik modern."
-      }
-    ]
-  },
-  {
-    "day": "Selasa",
-    "subjects": [
-      {
-        "name": "Kecerdasan Buatan",
-        "daytime": "Selasa",
-        "time": "08.00 - 09.40",
-        "room": "HH-204B",
-        "lecturer": "Tita Karlita",
-        "sks": 3,
-        "description": "Pengantar konsep dan teknik dalam kecerdasan buatan."
-      },
-      {
-        "name": "Praktikum Pemodelan Statistik Terapan",
-        "daytime": "Selasa",
-        "time": "10.30 - 12.10",
-        "room": "PS-04.11",
-        "lecturer": "Ronny Susetyoko",
-        "sks": 2,
-        "description": "Penggunaan alat statistik untuk analisis data."
-      }
-    ]
-  },
-  {
-    "day": "Rabu",
-    "subjects": [
-      {
-        "name": "Manajemen Data",
-        "daytime": "Rabu",
-        "time": "08.00 - 09.40",
-        "room": "A 302",
-        "lecturer": "Isbat Uzzin Nadhori",
-        "sks": 3,
-        "description": "Manajemen data dengan fokus pada pengelolaan dan pengolahan."
-      },
-      {
-        "name": "Praktikum Kecerdasan Buatan",
-        "daytime": "Rabu",
-        "time": "10.30 - 12.10",
-        "room": "SAW-07.06",
-        "lecturer": "Tita Karlita",
-        "sks": 2,
-        "description": "Praktikum teknik kecerdasan buatan untuk aplikasi nyata."
-      },
-      {
-        "name": "Praktikum Pemrosesan Data",
-        "daytime": "Rabu",
-        "time": "13.50 - 15.30",
-        "room": "SAW-07.06",
-        "lecturer": "Alfi Fadliana",
-        "sks": 2,
-        "description": "Praktikum pengolahan data menggunakan teknologi terbaru."
-      }
-    ]
-  },
-  {
-    "day": "Kamis",
-    "subjects": [
-      {
-        "name": "Pemrosesan Data",
-        "daytime": "Kamis",
-        "time": "08.00 - 09.40",
-        "room": "HH-203",
-        "lecturer": "Alfi Fadliana",
-        "sks": 3,
-        "description": "Teknik dan alat untuk memproses data dalam berbagai format."
-      },
-      {
-        "name": "Praktikum Pemrograman 2",
-        "daytime": "Kamis",
-        "time": "10.30 - 12.10",
-        "room": "SAW-07.07",
-        "lecturer": "Tri Hadiah Muliawati",
-        "sks": 2,
-        "description": "Praktikum pemrograman lanjutan dengan aplikasi nyata."
-      },
-      {
-        "name": "Praktikum Manajemen Data",
-        "daytime": "Kamis",
-        "time": "13.50 - 15.30",
-        "room": "SAW-07.07",
-        "lecturer": "Isbat Uzzin Nadhori",
-        "sks": 2,
-        "description": "Praktikum pengelolaan data secara efektif."
-      }
-    ]
-  },
-  {
-    "day": "Jumat",
-    "subjects": [
-      {
-        "name": "Pemodelan Statistik Terapan",
-        "daytime": "Jumat",
-        "time": "09.40 - 11.20",
-        "room": "A 301",
-        "lecturer": "Ronny Susetyoko",
-        "sks": 3,
-        "description": "Penggunaan statistik untuk pemodelan data nyata."
-      }
-    ]
-  }
-]
+{
+  "senin": [
+    {
+      "hari": "Senin",
+      "mata_kuliah": "Matematika 2",
+      "jam": "08.00 - 09.40",
+      "ruangan": "A 301",
+      "dosen": "Alfi Fadliana",
+      "sks": 2,
+      "deskripsi": "Pembahasan lanjutan dalam kalkulus dan matematika terapan."
+    },
+    {
+      "hari": "Senin",
+      "mata_kuliah": "Kewarganegaraan",
+      "jam": "10.30 - 12.10",
+      "ruangan": "HH-101",
+      "dosen": "Mochammad Machmud Rifadil",
+      "sks": 2,
+      "deskripsi": "Pengembangan wawasan kebangsaan dan nilai-nilai kewarganegaraan."
+    },
+    {
+      "hari": "Senin",
+      "mata_kuliah": "Pemrograman 2",
+      "jam": "13.50 - 15.30",
+      "ruangan": "B 302",
+      "dosen": "Tri Hadiah Muliawati",
+      "sks": 3,
+      "deskripsi": "Pengembangan kemampuan pemrograman lanjutan menggunakan teknik modern."
+    }
+  ],
+  "selasa": [
+    {
+      "hari": "Selasa",
+      "mata_kuliah": "Kecerdasan Buatan",
+      "jam": "08.00 - 09.40",
+      "ruangan": "HH-204B",
+      "dosen": "Tita Karlita",
+      "sks": 3,
+      "deskripsi": "Pengantar konsep dan teknik dalam kecerdasan buatan."
+    },
+    {
+      "hari": "Selasa",
+      "mata_kuliah": "Praktikum Pemodelan Statistik Terapan",
+      "jam": "10.30 - 12.10",
+      "ruangan": "PS-04.11",
+      "dosen": "Ronny Susetyoko",
+      "sks": 2,
+      "deskripsi": "Penggunaan alat statistik untuk analisis data."
+    }
+  ],
+  "rabu": [
+    {
+      "hari": "Rabu",
+      "mata_kuliah": "Manajemen Data",
+      "jam": "08.00 - 09.40",
+      "ruangan": "A 302",
+      "dosen": "Isbat Uzzin Nadhori",
+      "sks": 3,
+      "deskripsi": "Manajemen data dengan fokus pada pengelolaan dan pengolahan."
+    },
+    {
+      "hari": "Rabu",
+      "mata_kuliah": "Praktikum Kecerdasan Buatan",
+      "jam": "10.30 - 12.10",
+      "ruangan": "SAW-07.06",
+      "dosen": "Tita Karlita",
+      "sks": 2,
+      "deskripsi": "Praktikum teknik kecerdasan buatan untuk aplikasi nyata."
+    },
+    {
+      "hari": "Rabu",
+      "mata_kuliah": "Praktikum Pemrosesan Data",
+      "jam": "13.50 - 15.30",
+      "ruangan": "SAW-07.06",
+      "dosen": "Alfi Fadliana",
+      "sks": 2,
+      "deskripsi": "Praktikum pengolahan data menggunakan teknologi terbaru."
+    }
+  ],
+  "kamis": [
+    {
+      "hari": "Kamis",
+      "mata_kuliah": "Pemrosesan Data",
+      "jam": "08.00 - 09.40",
+      "ruangan": "HH-203",
+      "dosen": "Alfi Fadliana",
+      "sks": 3,
+      "deskripsi": "Teknik dan alat untuk memproses data dalam berbagai format."
+    },
+    {
+      "hari": "Kamis",
+      "mata_kuliah": "Praktikum Pemrograman 2",
+      "jam": "10.30 - 12.10",
+      "ruangan": "SAW-07.07",
+      "dosen": "Tri Hadiah Muliawati",
+      "sks": 2,
+      "deskripsi": "Praktikum pemrograman lanjutan dengan aplikasi nyata."
+    },
+    {
+      "hari": "Kamis",
+      "mata_kuliah": "Praktikum Manajemen Data",
+      "jam": "13.50 - 15.30",
+      "ruangan": "SAW-07.07",
+      "dosen": "Isbat Uzzin Nadhori",
+      "sks": 2,
+      "deskripsi": "Praktikum pengelolaan data secara efektif."
+    }
+  ],
+  "jumat": [
+    {
+      "hari": "Jumat",
+      "mata_kuliah": "Pemodelan Statistik Terapan",
+      "jam": "09.40 - 11.20",
+      "ruangan": "A 301",
+      "dosen": "Ronny Susetyoko",
+      "sks": 3,
+      "deskripsi": "Penggunaan statistik untuk pemodelan data nyata."
+    }
+  ]
+}
