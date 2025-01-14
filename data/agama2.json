@@ -1,0 +1,34 @@
+{
+  "project": {
+    "id": "Proyek Akhir Semester 1",
+    "name": "Nama Proyek",
+    "team": [
+      {
+        "name": "Nama Anggota",
+        "role": "Peran (e.g., Data Scientist, Analyst, Developer)"
+      }
+    ],
+    "instructions": "Instruksi atau panduan pengerjaan proyek.",
+    "summary": "Ringkasan proyek dalam beberapa kalimat.",
+    "details": {
+      "objective": "Tujuan dari proyek.",
+      "tools": ["Python", "R", "Jupyter Notebook", "Pandas"],
+      "datasets": ["Nama Dataset 1", "Nama Dataset 2"],
+      "methodology": "Metodologi yang digunakan dalam proyek.",
+      "expectedOutcome": "Hasil yang diharapkan dari proyek."
+    },
+    "progress": {
+      "status": "In Progress",
+      "percentage": 75
+    },
+    "links": {
+      "report": "https://example.com/laporan.pdf",
+      "video": "https://example.com/video.mp4",
+      "repository": "https://github.com/username/project-repo"
+    },
+    "timestamps": {
+      "createdAt": "2025-01-02T00:00:00Z",
+      "updatedAt": "2025-01-02T12:00:00Z"
+    }
+  }
+}
